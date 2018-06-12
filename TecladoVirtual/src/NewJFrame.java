@@ -44,7 +44,7 @@ public
         _9 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        bk = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         q = new javax.swing.JButton();
         w = new javax.swing.JButton();
@@ -140,7 +140,7 @@ public
 
         jButton12.setText("=");
 
-        jButton13.setText("⬅️");
+        bk.setText("⬅️");
 
         jButton14.setText("⇆");
 
@@ -465,7 +465,7 @@ public
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(bk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addGroup(layout.createSequentialGroup()
@@ -577,7 +577,7 @@ public
                             .addComponent(_0)
                             .addComponent(jButton11))
                         .addComponent(_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton13))
+                        .addComponent(bk))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(6, 6, 6)
@@ -1086,15 +1086,20 @@ public
                 erro++;
                 }
                 break;
-                default:
-                    //exeção
+                case 8:
+                    bk.setBackground(Color.blue);
+                    pos--;
+                break;
             }
             lbl1.setText(Integer.toString(acerto));
             lbl2.setText(Integer.toString(erro));
             pos++;
         }
         else{
-            //calcula
+            float pct = (float) acerto/(erro+acerto);
+            pct*=100;
+            String val = pct+"";
+            lbl3.setText("sua taxa de acerto foi de "+val+"%");
         }
     }//GEN-LAST:event_txtKeyPressed
 
@@ -1210,7 +1215,11 @@ public
            break;
            case 'm':
                m.setBackground(Color.LIGHT_GRAY);
-           break;          
+           break; 
+           case 8:
+                bk.setBackground(Color.LIGHT_GRAY);
+                pos--;
+            break;
        }
     }//GEN-LAST:event_txtKeyReleased
 
@@ -1272,6 +1281,7 @@ public
     private javax.swing.JButton _9;
     private javax.swing.JButton a;
     private javax.swing.JButton b;
+    private javax.swing.JButton bk;
     private javax.swing.JButton c;
     private javax.swing.JButton d;
     private javax.swing.JButton e;
@@ -1284,7 +1294,6 @@ public
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
